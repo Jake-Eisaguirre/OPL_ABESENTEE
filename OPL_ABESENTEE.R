@@ -27,6 +27,7 @@ tryCatch({
 dbExecute(db_connection_pg, "USE SCHEMA CREW_ANALYTICS")
 
 absentee_q <- "SELECT 
+                 'HA' AS AIRLINE,
                  absence_date, 
                  base, 
                  crew_type, 
@@ -41,6 +42,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                 'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -55,6 +57,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                   'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -69,6 +72,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                  'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -83,6 +87,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                 'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -97,6 +102,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                 'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -111,6 +117,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                 'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -125,6 +132,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                 'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -139,6 +147,7 @@ absentee_q <- "SELECT
                UNION ALL
                 
                SELECT 
+                 'HA' AS AIRLINE,
                    absence_date, 
                    base, 
                    crew_type, 
@@ -155,7 +164,7 @@ absentee_q <- "SELECT
 
 clean_absentee <- dbGetQuery(db_connection_pg, absentee_q)
 
-write_csv(clean_absentee, "F:/ABSENTEE.csv")
+write_csv(clean_absentee, "F:/INFLIGHT_ABSENTEE.csv")
 
 print("Data Uploaded")
 Sys.sleep(10)
